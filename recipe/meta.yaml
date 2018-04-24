@@ -30,8 +30,18 @@ test:
 
 about:
   home: http://docs.enthought.com/pyface/
+  home: https://github.com/enthought/pyface
   license: BSD 3-clause
-  summary: pyface - traits-capable windowing framework
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: Traits-capable windowing framework
+  description: |
+    pyface project contains a toolkit-independent GUI abstraction layer,
+    which is used to support the "visualization" features of the Traits
+    package.
+  doc_url: http://docs.enthought.com/pyface/
+  doc_source_url: https://github.com/enthought/pyface/blob/master/docs/source/index.rst
+  dev_url: https://github.com/enthought/pyface
 
 extra:
   recipe-maintainers:
