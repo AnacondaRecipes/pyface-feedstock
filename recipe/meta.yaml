@@ -1,4 +1,4 @@
-{% set version = "7.2.0" %}
+{% set version = "7.3.0" %}
 
 package:
   name: pyface
@@ -7,7 +7,7 @@ package:
 source:
   fn: pyface-{{ version }}.tar.bz2
   url: https://pypi.io/packages/source/p/pyface/pyface-{{ version }}.tar.gz
-  sha256: e2e20dab6324f4e34c30c8725780b56684cb26fc5e1b8000727e2b88e2a44061
+  sha256: a7031ec4cfff034affc822e47ff5e6c1a0272e576d79465cdbbe25f721740322
 
 build:
   number: 1
