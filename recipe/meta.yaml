@@ -22,7 +22,7 @@ requirements:
   run:
     - python
     - traits
-    - pyqt  # [not ppc64le]
+    - pyqt  # [not (ppc64le or arm64)]
     - pygments
 
 test:
