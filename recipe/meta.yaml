@@ -1,4 +1,4 @@
-{% set version = "7.3.0" %}
+{% set version = "8.0.0" %}
 
 package:
   name: pyface
@@ -7,32 +7,36 @@ package:
 source:
   fn: pyface-{{ version }}.tar.bz2
   url: https://pypi.io/packages/source/p/pyface/pyface-{{ version }}.tar.gz
-  sha256: a7031ec4cfff034affc822e47ff5e6c1a0272e576d79465cdbbe25f721740322
+  sha256: 7e13618347b7a648ed20cdbd4fd1a51648f5010291f35e4e0ff1bf70a720cbf8
 
 build:
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
     - pip
     - python
-    - traits >=6.0.0
-    - pygments
+    - setuptools >=61
+    - wheel
   run:
     - python
-    - traits
-    - pyqt  # [not (ppc64le or arm64)]
+    - traits >=6.2
     - pygments
+    - importlib-metadata >=3.6  # [py<310]
+    - importlib-resources >=1.1.0  # [py<39]
 
 test:
   imports:
     - pyface
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: http://docs.enthought.com/pyface/
   home: https://github.com/enthought/pyface
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: Traits-capable windowing framework
@@ -40,8 +44,7 @@ about:
     pyface project contains a toolkit-independent GUI abstraction layer,
     which is used to support the "visualization" features of the Traits
     package.
-  doc_url: http://docs.enthought.com/pyface/
-  doc_source_url: https://github.com/enthought/pyface/blob/master/docs/source/index.rst
+  doc_url: https://docs.enthought.com/pyface/
   dev_url: https://github.com/enthought/pyface
 
 extra:
