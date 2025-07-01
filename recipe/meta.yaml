@@ -22,7 +22,6 @@ requirements:
   run:
     - python
     - traits >=6.2
-    - pygments
     - importlib-metadata >=3.6  # [py<310]
     - importlib-resources >=1.1.0  # [py<39]
 
