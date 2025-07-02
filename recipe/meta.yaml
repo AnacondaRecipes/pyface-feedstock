@@ -1,16 +1,17 @@
+{% set name = "pyface" %}
 {% set version = "8.0.0" %}
 
 package:
-  name: pyface
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: pyface-{{ version }}.tar.bz2
-  url: https://pypi.io/packages/source/p/pyface/pyface-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7e13618347b7a648ed20cdbd4fd1a51648f5010291f35e4e0ff1bf70a720cbf8
 
 build:
   number: 0
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
